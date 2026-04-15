@@ -19,6 +19,17 @@ This project is designed to automatically control vehicle headlights based on am
 ## 🔧 Working Principle
 The LDR senses surrounding light intensity. When it gets dark, the system automatically turns ON the headlights. During daylight, it turns them OFF.
 
+## 📸 Project Images
+
+### Circuit Diagram
+![Circuit](circuit.jpg)
+
+### Hardware Setup
+![Setup](setup.jpg)
+
+### Working Model
+![Working](working.jpg)
+
 ## 📂 Files Included
 - Project Report (PDF)
 - Arduino Code
