@@ -9,6 +9,18 @@ This project is designed to automatically control vehicle headlights based on am
 - Resistors
 - Relay Module / LED
 - Power Supply
+  
+## 📸 Project Images
+
+### Circuit Diagram
+![Circuit](circuit.jpg)
+
+### Hardware Setup
+![Setup](setup.jpg)
+
+### Working Model
+![Working](working.jpg)
+
 
 ## 🚀 Features
 - Automatically turns headlights ON/OFF
