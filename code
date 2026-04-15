@@ -1,0 +1,72 @@
+#include <Wire.h>
+#include <BH1750.h>
+#include <Servo.h>
+#include <LiquidCrystal_I2C.h>
+
+BH1750 lightMeter;
+Servo headServo;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+int mosfetPin = 5;
+int servoPin = 9;
+
+int normalBrightness = 255;
+int dimBrightness = 100;
+
+int normalAngle = 90;
+int glareAngle = 70;
+
+float glareThreshold = 300.0;   // Adjust after testing
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+  lightMeter.begin();
+
+  pinMode(mosfetPin, OUTPUT);
+  headServo.attach(servoPin);
+
+  lcd.init();
+  lcd.backlight();
+
+  // Initial State
+  analogWrite(mosfetPin, normalBrightness);
+  headServo.write(normalAngle);
+
+  lcd.setCursor(0, 0);
+  lcd.print("Smart Headlight");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop() {
+
+  float lux = lightMeter.readLightLevel();
+  Serial.print("Light: ");
+  Serial.println(lux);
+
+  if (lux > glareThreshold) {
+    // Glare Detected
+    analogWrite(mosfetPin, dimBrightness);
+    headServo.write(glareAngle);
+
+    lcd.setCursor(0, 0);
+    lcd.print("Glare Detected ");
+    lcd.setCursor(0, 1);
+    lcd.print("Lux:");
+    lcd.print(lux);
+  } 
+  else {
+    // Normal Mode
+    analogWrite(mosfetPin, normalBrightness);
+    headServo.write(normalAngle);
+
+    lcd.setCursor(0, 0);
+    lcd.print("Normal Mode     ");
+    lcd.setCursor(0, 1);
+    lcd.print("Lux:");
+    lcd.print(lux);
+  }
+
+  delay(500);
+}
