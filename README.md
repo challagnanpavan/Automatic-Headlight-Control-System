@@ -10,13 +10,6 @@ This project is designed to automatically control vehicle headlights based on am
 - Relay Module / LED
 - Power Supply
 
-  ### Hardware Setup
-![Setup](A-H-C-S_1.jpeg)
-![Setup](A-H-C-S_2.jpeg)
-<img width="976" height="572" alt="image" src="https://github.com/user-attachments/assets/e6400fc9-9bb3-469b-adab-db8a4cfbd392" />
-
-
-
 ## 🚀 Features
 - Automatically turns headlights ON/OFF
 - Detects light intensity using LDR sensor
@@ -28,14 +21,12 @@ The LDR senses surrounding light intensity. When it gets dark, the system automa
 
 ## 📸 Project Images
 
+  ### Hardware Setup
+![Setup](A-H-C-S_1.jpeg)
+![Setup](A-H-C-S_2.jpeg)
+
 ### Circuit Diagram
-![Circuit](circuit.jpg)
-
-### Hardware Setup
-![Setup](setup.jpg)
-
-### Working Model
-![Working](working.jpg)
+<img width="976" height="572" alt="image" src="https://github.com/user-attachments/assets/e6400fc9-9bb3-469b-adab-db8a4cfbd392" />
 
 ## 📂 Files Included
 - Project Report (PDF)
